@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>2次元樹木曲線の作成(TreeSM2D1)</title>
+</head>
+<style>
+body{ background-color: #ccccdd; }
+</style>
+
+<body onload="Main()">
+<table>
+<tr>
+<form name = "form1">
+<p> canvasサイズ 
+X<input type="number" name = "c_sizeX" value = "400" step = "50" min = "200" style = "width:50px;" onClick = "onClickC_Size()"> 
+Y<input type="number" name = "c_sizeY" value = "400" step = "50" min = "200" style = "width:50px;" onClick = "onClickC_Size()">&nbsp 
+</form>
+</tr>
+
+<tr>
+<td>
+<canvas id="myCanvas" width="400" height="400" style="border: 2px solid;"></canvas>
+</td>
+<td>
+<form name = "form2">
+
+<p>世代数&nbsp
+<input type="number" name = "generation" value = "5" step = "1" min = "2" max = "8" style = "width:40px;" onClick = "onChangeData()" >&nbsp
+</p>
+<p>分岐数&nbsp
+<input type="number" name = "branch" value = "3" step = "1" min = "2" max = "5" style = "width:40px;" onClick = "onChangeData()" >&nbsp
+</p>
+<p>成長率
+<input type="number" name = "rate" value = "0.8" step = "0.05" min = "0.5" style = "width:50px;" onClick = "onChangeData()" >
+</p>
+<p>変動率
+<input type="number" name = "variation" value = "0.0" step = "0.05" min = "0" style = "width:50px;" onClick = "onChangeData()" >&nbsp
+</p>
+
+<p>分岐角
+<input type="number" name = "alpha" value = "30" step = "5" min = "10" style = "width:50px;" onClick = "onChangeData()" >&nbsp&nbsp&nbsp
+</p>
+<p> scale &nbsp
+<input type="number" name = "scale" value = "70" step = "5" min = "10" style = "width:50px;" onClick = "onChangeScale()" >&nbsp&nbsp&nbsp
+</p>
+<p>
+<input type="button" name="Reset" value = "Reset" onclick="onClickReset()">
+</p>
+<script src="../lib/swg2DGraph.js"></script>
+<script src="treeSM2D1.js"></script>
+</body>
+</html>

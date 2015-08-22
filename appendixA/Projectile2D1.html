@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>２次元放物運動(Projectile2D1)</title>
+</head>
+
+<style>
+body{ background-color: #ccccdd; }
+</style>
+
+<body onload = "main()">
+<table>
+<tr>
+<form name = "form1">
+<p>
+<label><input type="checkbox" name="m_analysis" checked >解析解</label>
+<label><input type="checkbox" name="m_for" >前進オイラー法</label>
+<label><input type="checkbox" name="m_back" >後退オイラー法</label>
+<label><input type="checkbox" name="m_improved">改良オイラー法</label>
+<label><input type="checkbox" name="m_frog">かえる跳び法</label>&nbsp&nbsp&nbsp
+<input type="button" name="start" value = "start" style = "width:60px;" onclick="onClickStart()">&nbsp
+<input type="button" name="reset" value = "clear" style = "width:60px;" onclick="onClickClear()">
+</p>
+<p>
+直径<input type="number" name = "dia" value = "0.074" step = "0.001" min = "0.01" style = "width:60px;">[m]&nbsp 
+質量<input type="number" name = "mass" value = "0.145" step = "0.001" min = "0.001" style = "width:60px;">[kg]&nbsp 
+初速度<input type="number" name = "speed0" value = "30.0" step = "5.0" min = "10.0" style = "width:60px;">[m/s]&nbsp 
+角度<input type="number" name = "angle0" value = "45.0" step = "5.0" min = "10.0" style = "width:60px;">[deg]&nbsp 
+dt<input type="number" name = "dt" value = "0.01" step = "0.01" min = "0.01" style = "width:60px;">[s]
+</p>
+<p>空気抵抗
+<label><input type = "radio" name = "radio1" value = "0" checked onClick = "onChangeResistance()"> なし</label>&nbsp
+<label><input type = "radio" name = "radio1" value = "1" onClick = "onChangeResistance()"> 粘性</label>&nbsp
+<label><input type = "radio" name = "radio1" value = "2" onClick = "onChangeResistance()"> 慣性</label>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+Hmax<input type = "text" name = "Hmax" style = "width:50px;" >[m]&nbsp
+Lmax<input type = "text" name = "Lmax" style = "width:50px;" >[m]&nbsp
+Tmax<input type = "text" name = "Tmax" style = "width:50px;" >[s]&nbsp
+</p>
+</form>
+</tr>
+<tr>
+<td>
+<canvas id="myCanvas" width="700" height="400" style="border: 1px solid;">
+</canvas>
+</td>
+</tr>
+</table>
+
+<script src="../lib/swg2DGraph.js"></script>
+<script src="projectile2D1.js"></script>
+</body>
+</html>

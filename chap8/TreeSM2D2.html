@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>2次元樹木シミュレーション2(TreeSM2D2)</title>
+</head>
+<style>
+body{ background-color: #ccccdd; }
+</style>
+
+<body onload="Main()">
+<table>
+<tr>
+<form name = "form1">
+<p> canvasサイズ 
+X<input type="number" name = "c_sizeX" value = "400" step = "50" min = "200" style = "width:50px;" onClick = "onClickC_Size()"> 
+Y<input type="number" name = "c_sizeY" value = "400" step = "50" min = "200" style = "width:50px;" onClick = "onClickC_Size()">&nbsp 
+
+fps<input type = "text" name = "fps" style = "width:30px" > &nbsp
+step<input type = "text" name = "step" style = "width:50px" >&nbsp
+
+dt<input type = "number" name = "dt" value = "0.017" step = "0.001" min = "0.001" style = "width:60px;" onClick = "onChangeData()">&nbsp
+time<input type = "text" name = "time" style = "width:50px" >[s]
+</p>
+
+</form>
+</tr>
+
+<tr>
+<td>
+<canvas id="myCanvas" width="400" height="400" style="border: 2px solid;"></canvas>
+</td>
+<td>
+<form name = "form2">
+<p>
+質量<input type="number" name = "mass" value = "0.01" step = "0.001" min = "0.001" style = "width:60px;" onClick = "onChangeData()" >&nbsp
+世代数<input type="number" name = "generation" value = "5" step = "1" min = "2" max = "8" style = "width:40px;" onClick = "onChangeData()" >&nbsp
+</p>
+<p>分岐数&nbsp
+<input type="number" name = "branch" value = "3" step = "1" min = "2" max = "5" style = "width:40px;" onClick = "onChangeData()" >&nbsp
+分岐角
+<input type="number" name = "alpha" value = "30" step = "5" min = "10" style = "width:50px;" onClick = "onChangeData()" >&nbsp&nbsp&nbsp
+</p>
+<p>成長率
+<input type="number" name = "rate" value = "0.8" step = "0.05" min = "0.5" style = "width:50px;" onClick = "onChangeData()" >
+変動率
+<input type="number" name = "variation" value = "0.0" step = "0.05" min = "0" style = "width:50px;" onClick = "onChangeData()" >&nbsp
+</p>
+
+<p>
+定数<input type="number" name = "constK" value = "1000" step = "50" min = "0" style = "width:60px;" onClick = "onChangeData()" >&nbsp
+方向<input type="number" name = "drctnK" value = "1000" step = "50" min = "0" style = "width:60px;" onClick = "onChangeData()" >
+</p>
+
+<p>
+damping<input type="number" name = "damping" value = "0.01" step = "0.01" min = "0" style = "width:50px;" onClick = "onChangeData()" >&nbsp&nbsp&nbsp
+drag<input type="number" name = "drag" value = "0.01" step = "0.01" min = "0" style = "width:50px;" onClick = "onChangeData()" >
+</p>
+
+<p>&nbsp
+vel<input type="number" name = "winVel" value = "1" step = "0.1" min = "0.0" style = "width:50px;" onClick = "onChangeVel()" >&nbsp
+freq<input type="number" name = "winFreq" value = "0.5" step = "0.1" min = "0.0" style = "width:50px;" onClick = "onChangeFreq()" >
+</p>
+<p>&nbsp&nbsp
+grad<input type="number" name = "winGrad" value = "0.1" step = "0.1" min = "0.0" style = "width:50px;" onClick = "onChangeGrad()" >
+</p>
+
+<p>scale
+<input type="number" name = "scale" value = "70" step = "5" min = "10" style = "width:50px;" onClick = "onChangeScale()" >&nbsp&nbsp&nbsp
+width
+<input type="number" name = "width" value = "5" step = "1" min = "1" style = "width:50px;" onClick = "onChangeData()" >
+</p>
+
+<p>
+<input type="button" name="Start" value = "Start" onclick="onClickStart()">
+<input type="button" name="Freeze" value = "Freeze" onclick="onClickFreeze()">
+<input type="button" name="Step" value = "Step" onclick="onClickStep()">
+<input type="button" name="Reset" value = "Reset" onclick="onClickReset()">
+</p>
+
+</form>
+<td>
+</tr>
+</table>
+<script src="../lib/swgMath.js"></script>
+<script src="../lib/swg2DGraph.js"></script>
+<script src="swgSpringMassTree2D.js"></script>
+<script src="treeSM2D2.js"></script>
+</body>
+</html>

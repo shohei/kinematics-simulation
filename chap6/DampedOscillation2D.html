@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>減衰振動(DampedOscillation2D)</title>
+</head>
+
+<style>
+body{ background-color: #ccccdd; }
+</style>
+
+<body onload = "main()">
+<table>
+<tr>
+<form name = "form1">
+<p>
+dt<input type="number" name = "dt" value = "0.001" step = "0.0001" min = "0.0001" max = "0.01" style = "width:80px;" onclick="onChangeData()">[s]&nbsp&nbsp
+time<input type="number" name = "actTime" value = "5" step = "1" min = "1" style = "width:50px;" onclick="onChangeData()">[s]&nbsp&nbsp
+mass<input type="number" name = "mass" value = "0.1" step = "0.01" min = "0.01" style = "width:50px;" onclick="onChangeData()">[kg]&nbsp&nbsp
+constK<input type="number" name = "constK" value = "10" step = "1" min = "1" style = "width:50px;" onclick="onChangeData()">[N/m]&nbsp&nbsp
+omega0<input type="text" name = "omega0" style = "width:50px;">[1/s]
+</p>
+length0<input type="number" name = "length0" value = "1" step = "0.1" min = "0.5" style = "width:50px;" onclick="onChangeData()">[m]&nbsp&nbsp
+disp0<input type="number" name = "disp0" value = "0.5" step = "0.1" min = "0.1" style = "width:50px;" onclick="onChangeData()">[m]&nbsp&nbsp
+amp<input type="number" name = "amp" value = "0.5" step = "0.1" min = "0.5" style = "width:50px;" onclick="onChangeData()">[m]&nbsp&nbsp&nbsp
+numData<input type="number" name = "numData" value = "500" step = "50" min = "100" style = "width:50px;" onclick="onChangeData()">
+</p>
+
+<p>
+減衰率 γ
+<input type="number" name = "gamma0" value = "0.5" step = "0.1" min = "0.1" style = "width:50px;" onclick="onChangeData()">&nbsp
+<input type="number" name = "gamma1" value = "10" step = "1" min = "1" style = "width:50px;" onclick="onChangeData()">&nbsp
+<input type="number" name = "gamma2" value = "50" step = "10" min = "10" style = "width:50px;" onclick="onChangeData()">[1/s]&nbsp&nbsp&nbsp&nbsp&nbsp
+<input type="button" name= "Start" value = "Start" style = "width:60px;" onclick="onClickStart()">&nbsp&nbsp
+<input type="button" name= "Reset" value = "Clear" style = "width:60px;" onclick="onClickClear()">
+</form>
+</tr>
+<tr>
+<td>
+<canvas id="myCanvas" width="700" height="400" style="border: 1px solid;">
+</canvas>
+</td>
+</tr>
+</table>
+
+<script src="../lib/swg2DGraph.js"></script>
+<script src="dampedOscillation2D.js"></script>
+</body>
+</html>

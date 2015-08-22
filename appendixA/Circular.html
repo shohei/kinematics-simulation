@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<title>等速円運動（Circular)</title>
+</head>
+
+<style>
+body{ background-color: #ccccdd; }
+</style>
+
+<body onload = "main()">
+<table>
+<tr>
+<form name = "form1">
+<p>
+<label><input type="checkbox" name="m_analysis" checked >解析解</label>
+<label><input type="checkbox" name="m_for">前進オイラー法</label>
+<label><input type="checkbox" name="m_back" >後退オイラー法</label>
+<label><input type="checkbox" name="m_improved">改良オイラー法</label>
+<label><input type="checkbox" name="m_frog">かえる跳び法</label>
+</p>
+<p>
+dt <input type="number" name = "dt" value = "0.01" step = "0.01" min = "0.01" style = "width:60px;">[s]&nbsp 
+<input type="button" name="start" value = "start" onclick="onClickStart()">
+<input type="button" name="reset" value = "clear" onclick="onClickClear()">
+</p>
+</form>
+</tr>
+<tr>
+<td>
+<canvas id="myCanvas" width="630" height="450" style="border: 1px solid;">
+</canvas>
+</td>
+</tr>
+</table>
+
+<script src="../lib/swg2DGraph.js"></script>
+<script src="circular.js"></script>
+</body>
+</html>
